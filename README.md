@@ -69,6 +69,5 @@ pyenv shell command only activates a particular python version for the shell tha
 export PATH=/usr/local/cuda-12.1/bin${PATH:+:${PATH}}
 <br> sudo apt-get install python3-pip
 <br> sudo apt-get update
-
 #### Symbolic Link (symlink) Linux / Mac
 ln -s /path/to/original /path/to/symlink
