@@ -513,7 +513,7 @@ nohup sort file1 > file2&	# To continue the execution of  background process eve
 kill PID		# To Terminate a process
 <br> kill -9 PID		# ‘sure kill’ signal ‘9’
 
-## Interactive Shell  Programming
+## Shell (Bash/Unix) Scripting
 sh shell
 <br> Two basic words in shell are read &  (backslash '\' is used to escape characters)
 <br> echo Enter your name\?
@@ -531,7 +531,7 @@ sh shell
 <br> unset age			# A variable can be removed from  the shell by using unset command
 
 #### Positional Parameters
-<br> <Shell Script> <variable 1> <variable 2> <variable 3> <variable 4>
+ShellScript variable1 variable2 variable3 variable4
 <br> In the above example $0 is variable 1 and $1 is variable 2 and so on and so forth. Many occasions, a program  expects the variables in a certain  fashion. This is achieved through positional parameters from $0  through $9. Shell can handle only 9 variables at a time. To access more than 9, the shift command is used.
 <br> 0 is the program itself. Thus $abc par1 par2 par3 par4 assigns abc to $0, par1 to $1 … par4 to $4
 ```
@@ -558,29 +558,32 @@ echo $a
 <br> In the above Anything after ‘# ’ sign will be  treated as comment. 'expr' is the key word for doing arithmetic
 <br> expr can handle only integers. Use  bc to handle real numbers.
 <br> echo `expr $a + $b | bc`
-<br> 		UNIX - test
-<br> It depends upon the exit status of  the command given. test verbs translates the result into  success or failure.
+
+#### test
+It depends upon the exit status of the command given. test verbs translates the result into success or failure.
 <br> if test -d $fdir	# To check whether the directory exist or not (File Test)
 <br> If test condition
 <br> if test $a -gt $b
-<br> if test `expr $n%2 `-eq 0
+<br> if test `expr $n%2`-eq 0
 <br> UNIX - test (instead of using 'test')
 <br> Use square braces to avoid writing  test
-<br> Provide a space after ‘[ ‘
-<br> Provide a space before ‘] ’
-<br> There are three tests namely
-<br> Numerical test
-<br> String test
-<br> File test
-<br> 		UNIX - test - numerical
-<br> Used to compare numerical
+<br> Provide a space after `[`
+<br> Provide a space before `]`
+
+<br> __There are three tests namely
+<br> 1. Numerical test
+<br> 2. String test
+<br> 3. File test__
+
+#### test - numerical
+Used to compare numerical
 <br> -gt  = greater than
 <br> -lt   = less than
 <br> -ge  = greater than or equal to
 <br> -le   = less than or equal to
 <br> -ne  = not equal
 <br> -eq  = equal
-<br> 	UNIX - test - numerical Example
+<br> Example:
 ```
 if [ $1 -lt 5 ]
 then
@@ -591,8 +594,8 @@ else
   echo the value is > 7
 fi
 ```
-<br> 		UNIX - test - file
-<br> The following are the file related flags
+#### test - file
+The following are the file related flags
 <br> -s returns True if the file exists and size > 0
 <br> -f returns True if the file exists and not directory
 <br> -d return True if the file exists and is a directory
@@ -604,11 +607,11 @@ fi
 ```
 
 #### Decision loops. There are 4 decision making loops
-<br> if then fi
+if then fi
 <br> if then else fi
 <br> if then elif else fi
 <br> case - esac
-````
+```
 if [ $1 -lt 5 ]
 then
   echo the value is < 5
@@ -622,16 +625,18 @@ if cp $1 $2
 then echo “Copied successfully”
 fi
 ```
-<br> &&			- And Operator
-<br> ||			- Or Operator
-<br> $	- To access a value in the variable
+
+### Operators
+<br> && - And Operator
+<br> || - Or Operator
+<br> $ - To access a value in the variable
 
 ### Control Statements
-There are four types of control instructions in shell. They are
+__There are four types of control instructions in shell. They are
 <br> 1.Sequence Control Instruction
 <br> 2.Decision Control Instructions
 <br> 3.Loop Control Instruction
-<br> 4.Case Control Instruction
+<br> 4.Case Control Instruction__
 ```
 if [ -f $1 ] then
 	echo File exists
@@ -640,7 +645,8 @@ fi
 <br> -s returns True if the file exists and size > 0
 <br> -f returns True if the file exists and not directory
 <br> -d return True if the file exists and is a directory
-<br> 	UNIX logical conditions
+
+#### Logical conditions
 <br> -a  stands for AND condition
 <br> -o  stands for OR condition
 <br> -!  Is negation
@@ -678,7 +684,7 @@ case $option in
 esac
 ```
 
-#### UNIX case example (Need not be numbers - may be  strings too)
+#### case example (Need not be numbers - may be  strings too)
 ```
 case $option in
      bannana | orange) echo Fruit;;
@@ -687,13 +693,13 @@ case $option in
 esac
 ```
 
-#### UNIX Loop Controls
+#### Loop Controls
 <br> Provided 3 loop constructs namely:
 <br> while loop
 <br> for loop
 <br> until loop
 
-#### UNIX - while  loop
+#### while loop
 ```
 while <condition>
 do
@@ -701,8 +707,7 @@ do
 done
 ```
 <br> done is the delimiter of do
-
-#### UNIX - while example
+<br> e.g.:
 ```
 count = 1
 while [ $count -le 3 ]
@@ -712,18 +717,16 @@ do
 done
 ```
 
-#### UNIX - until loop
+#### until loop
 ```
 until <condition>
 do
   statements
 done
 ```
-<br> until continues its loop so long as  the condition is false
-<br> except this, while & until are  identical
+<br> until continues its loop so long as  the condition is false. except this, while & until are  identical
 
-#### UNIX - for loop
-Most frequently used loop
+#### for loop - Most frequently used loop
 ```
 for control-var in value1 value2…
 do
@@ -731,8 +734,7 @@ do
 done
 ```
 <br> for takes a list of variables
-
-#### UNIX - for example
+<br> e.g.:
 ```
 for word in $*
 do
@@ -740,7 +742,7 @@ do
 done
 ```
 
-#### UNIX - break statement
+#### break statement
 <br> Used to break the current loop  and comes out of the loop
 <br> Usually associated with if
 ```
@@ -751,7 +753,7 @@ then
 fi
 ```
 
-#### UNIX - continue statement
+#### continue statement
 <br> To take the control of the  beginning of the loop bypassing  the statements
 ```
 I=1
@@ -762,7 +764,7 @@ do
 done
 ```
 
-#### UNIX - Metacharacters
+#### Metacharacters
 Called as regular expressions. Classified as follows:
 <br> File name           : ? * […] [!…]
 <br> I/O redirection     : < > >> << m> m>&n
@@ -770,11 +772,11 @@ Called as regular expressions. Classified as follows:
 <br> Positional paras    : $1..$9
 <br> Spl characters      : $0 $* $@ $# $! $$ $-
 
-#### UNIX - File name
-<br> ls  ??  - lists all files with 2 chars  long
-<br> ls  a*  - lists all file names begin  with a
-<br> ls  [a-c]*  -file names begin with a,b  &c
-<br> ls  [!a-c]  - file names not starting  with a,b,c
+#### File name
+<br> ls ??  -lists all files with 2 chars long
+<br> ls a*  -lists all file names begin with a
+<br> ls [a-c]*  -file names begin with a,b &c
+<br> ls [!a-c]  - file names not starting  with a,b,c
 
 #### UNIX - I/O Redirection
 <br> <  - take input from
@@ -783,7 +785,6 @@ Called as regular expressions. Classified as follows:
 <br> << - abc  - takes the input till ‘abc’  encountered
 
 ## PROGRAMS
-write a program to read data in to a variable and display?
 <br> +  addition
 <br> -   substraction
 <br> *  multiplication
@@ -807,6 +808,7 @@ write a program to read data in to a variable and display?
 <br> unalias <command>		# Giving unalias to the already given name
 <br> history 
 <br> c=`expr $a \* $b`
+<br> Write a program to read data in to a variable and display?
 ```
 vi sp7
 echo Enter two float numbers a and b
@@ -853,7 +855,7 @@ useradd test10
 <br> tree dir1		# To display directories in a recursive manner
 
 #### Init Run Levels To control the system/server from the admin login
-<br> init 0			# Shutdown server/system
+init 0			# Shutdown server/system
 <br> init 1 or init s  # To bring the system to single user mode
 <br> init 2			# To bring the system to multiuser mode with no resource shared
 <br> init 3			# To bring the system to multiuser mode with resource shared
@@ -867,18 +869,18 @@ useradd test10
 <br> locate <filename>
 
 #### Managing Disk Space
-<br> du <file_name>		# It displays size (in KB) occupied by each file
+du <file_name>		# It displays size (in KB) occupied by each file
 <br> du  /home/test1
 <br> du -s <path> -It displays the space occupied by directories in KB
 <br> free			# It diplays information related to memory
 
 #### Process Status
-<br> UNIX is multi-user and multi- tasking Operating System, many  processes will be running simultaneously. UNIX assigns an unique number to each process that is invoked. It  is known as process identification  number shortly called as process- id. A process is BORN  when it starts  execution and DEAD when it is  over. A process can start (birth) another  process. The born process is known as child process. The first/parent process is known  as parent process.
+UNIX is multi-user and multi- tasking Operating System, many  processes will be running simultaneously. UNIX assigns an unique number to each process that is invoked. It  is known as process identification  number shortly called as process- id. A process is BORN  when it starts  execution and DEAD when it is  over. A process can start (birth) another  process. The born process is known as child process. The first/parent process is known  as parent process.
 <br> The parent process will wait till  the child process terminates (die)
 <br> Then the parent process will  terminate (die)
 <br> If the parent process dies  (terminates) before the  termination of the child process,  the child process will become orphan  process.
 
-## Not Used much by Sandeep but if Used has to be moved
+## Not Used by me but if Used has to be moved
 more +5 -20 -p -s file1 # Starts displaying file1 20 lines per  page, starting from 5th line, with  prompt for each page of display
 <br> finger			# Displays all the users with full details
 <br> ctrl+alt+F1 to F6	# At a time you can enter into 6 users in a server (Shifting from GUI to CUI)
@@ -886,7 +888,7 @@ more +5 -20 -p -s file1 # Starts displaying file1 20 lines per  page, starting f
 <br> banner <String>		# Displays banner of a string
 
 #### Communicating with users or Communication Commands(p31)
-<br> write <user-name>
+write <user-name>
 <br> hello How are you?
 <br> ^d (Ctrl+d)
 <br> finger -i	# Can find who are the users logged in. Also can find who set  message -n. User with * set mesg -n
@@ -927,8 +929,8 @@ mail -f
 <br> FTP(file transfer protocol)(see the unix book)
 <br> System Start Up and Shutdown
 
-<br> Changing Process Priority
-<br> The process priority can be  changed by:
+#### Changing Process Priority
+The process priority can be  changed by:
 <br> nice -15 <Command>
 <br> Priorities run between 0 to 39
 <br> Priority 20 is the default priority
@@ -974,8 +976,8 @@ mail -f
 <br> How to check for ordinary file and display  it contents?
 <br> How to check given file is ordinary file or directory file?
 <br> How to check read permission?
-<br> String1 != string2
-<br> String1 = string2
+<br> string1 != string2
+<br> string1 = string2
 <br> How to compare two strings?
 <br> if test str1 = str2
 <br> How to check given string is empty or not?
@@ -996,7 +998,6 @@ mail -f
 <br> How to check given character is lower case vowel or upper case vowel or a digit
 <br> How to display numbers from 1 to 10
 <br> How to find even sum and odd sum for a given number 
-
 <br> How to check whether given user connected to server or not if user not connected to server continiously check for user until user connected to server using while
 ```
 vi sp48
@@ -1087,4 +1088,4 @@ done
 <br> printenv     # print the environment variables of terminal mac / linux
 <br> echo $SHELL  # print present shell
 <br> echo $PATH   # print path variable in the environment variable
-<br> PATH=/opt/anaconda3/bin:/opt/anaconda3/condabin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin export PATH            (For Atom platformio ide, initial run command)
+<br> PATH=/opt/anaconda3/bin:/opt/anaconda3/condabin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin export PATH            (For exporting PATH)
