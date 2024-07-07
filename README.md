@@ -123,14 +123,14 @@ cd dir1			# Navigate/change directories
 <br> cd ../..		# To change two root directory level back
 
 ### cp
-<br> cp  <source file name>  <target file name>
+cp  <source file name>  <target file name>
 <br> cp f1 f2
 <br> cp /usr1/file1 /usr2/file1	# Can copy files across directories  by providing absolute or relative  path
 <br> cp /dir1/f1 /usr/home/
 <br> cp  file1 file2 dirname     # To copy files f1 and f2 to directory
 
 ### rm
-<br> rm f1			# To remove the file
+rm f1			# To remove the file
 <br> rm *			# It removes all files in current directory
 <br> rm -i f1		# Removes file interactively. Removes after confirmation
 <br> rm -i dir1
@@ -140,7 +140,7 @@ cd dir1			# Navigate/change directories
 <br> rm -rf  dir1		# Forced delete,even though you don't have a right permission
 
 ### mv
-<br> mv oldfilename newfilename
+mv oldfilename newfilename
 <br> mv old-dir new-dir
 <br> mv f1 f3		# To rename the file from f1 to f3
 <br> mv emp .emp		# To hide file
@@ -152,7 +152,7 @@ if both file contents are same no output is displayed
 if both files are different then it displays line number and character location 
 
 ### comm
-<br> comm <file1> <file2>	# It will display the files having common content.Output contains 3 columns
+comm <file1> <file2>	# It will display the files having common content.Output contains 3 columns
     	First Column Contains lines unique to file1
 	Second Column contains lines unique to file2
 	Third column contains lines common to both the files file1 and file2
@@ -162,7 +162,7 @@ if both files are different then it displays line number and character location
 <br> comm -3 f1 f2		# Removes lines that are common to both file1 and file2
 
 ### diff
-<br> diff f1 f2		# It shows different lines or difference lines between two files
+diff f1 f2		# It shows different lines or difference lines between two files
 <br> grep unix students | cut -f 2 3 | sort | tee file1
 <br> <br> head -10 sample|tail +5|tee file1
 <br> -----------------------------------------------------------------------------------------
@@ -181,7 +181,7 @@ if both files are different then it displays line number and character location
 <br> who | tee file1 | sort	# Total number of users logged into the server
 
 ### I/O Redirection & Piping
-<br> 	UNIX has keyboard as Standard Input device denoted by 0
+UNIX has keyboard as Standard Input device denoted by 0
 <br> 	Display unit is the Standard Output device denoted by 1
 <br> 	Display unit is the Standard Error device denoted by 2
 <br> I/O can be redirected using ‘<‘ &  ‘>’  
@@ -190,7 +190,6 @@ if both files are different then it displays line number and character location
 <br> 	'2>'symbols implies # write the error in a file rather than display unit
 <br> < -Redirect Input
 <br> > -Redirect Output
-
 <br> e.g.:
 <br> abc<in-file>out-file
 <br> 2>err-file
@@ -213,7 +212,8 @@ if both files are different then it displays line number and character location
 <br> ls -i			# print the index number of each file
 <br> ls -r 			# It display all files and subdirectories in reverse(descending order)
 
-### There are three types of permissions like
+### Permissions
+There are three types of permissions like
 <br> r - read permission
 <br> w - write permission
 <br> x - execution permission
@@ -231,7 +231,7 @@ if both files are different then it displays line number and character location
 <br> The weight of Read+Execution (r- x) is 4 + 1 = 5
 
 ### RegEx
-<br> Wild card Characters or Meta characters
+Wild card Characters or Meta characters
 <br> * , ? , - , []   : These are called wild card characters or meta characters
 <br> * -> It matches 0 or more characters(i.e., all)
 <br> ? -> It mathches a single character
@@ -339,7 +339,7 @@ grep tecno stu			# G lobally search a R egular E xpression and P rint it
 <br> grep -vci Unix students
 
 ### Compressing and Uncompressing files (compress,gzip,pack - uncompress,gunzip,unpack)
-<br> compress -v file1	# The Optional -v(for verbose) option files compress to report how much space it saved.
+compress -v file1	# The Optional -v(for verbose) option files compress to report how much space it saved.
 <br> zcat filename.Z	# It displays the zipped file contents in readable format
 <br> compress filename
 <br> uncompress dupli.z
@@ -352,14 +352,14 @@ grep tecno stu			# G lobally search a R egular E xpression and P rint it
 <br> unpack filename
 
 ### Regular Expressions
-<br> If any string contains wild card characters then it is known as Regular Expressions or Patterns.
+If any string contains wild card characters then it is known as Regular Expressions or Patterns.
 <br> Patterns are classified into 3 types
 <br> 1)Character Pattern(Default)
 <br> 2)Word Pattern
 <br> 3)Line Pattern
 
 #### 1)Character Pattern(Default)
-<br> grep "s*" students
+grep "s*" students
 <br> grep "sa*" students
 <br> grep "sandeep*" students
 <br> grep "sand*" students
@@ -367,7 +367,7 @@ grep tecno stu			# G lobally search a R egular E xpression and P rint it
 <br> grep "t[aeiou]" f1
 
 #### 2)Word Pattern
-<br> grep \<wordpattern\> filename
+grep \<wordpattern\> filename
 <br> grep "\<the\>" f1
 <br> grep "\<file\>" f1
 <br> grep "\<[0-9][0-9][0-9][0-9]\>" students -It searches 4 digit numbers in a given file 
@@ -376,7 +376,7 @@ grep tecno stu			# G lobally search a R egular E xpression and P rint it
 <br> grep "\<.\>" students # It searches for any single character word, '+' will not be treated as a character or numeric or alpha-numeric
 
 #### 3) Line Pattern 
-<br> ^ - Start of the Line
+^ - Start of the Line
 <br> $ - End of the Line
 <br> grep "^t" f1
 <br> grep '^t' f1
@@ -415,7 +415,7 @@ fgrep "text
 <br> grep -f special customers 	-f(file) option, you can tell grep / fgrep to take the search targets from a file
 
 #### The egrep command is the most powerful member of the grep command family. You can use it like fgrep to search for multiple targets. Like, grep it allows you to use regular expressions to specify targets, but it provides a fuller, more poweful set of regular expressions than grep.
-<br> The egrep command accepts all of the basic regular expressions recognized by grep, as well as several useful extension to the set.
+The egrep command accepts all of the basic regular expressions recognized by grep, as well as several useful extension to the set.
 egrep c|c++|unix students	# You can tell egrep to search for several targets by separating them with the vertical bar or pipe symbol(|)
 <br> egrep "C |Oracle" students
 <br> egrep "^\^|\%$" temp
@@ -436,7 +436,7 @@ find <path/filename>			# To find the file in the specified path
 <br> find /dev/null
 
 #### ls
-<br> ls -a		# To display all files including the  files starting with '.'
+ls -a		# To display all files including the  files starting with '.'
 <br> ls -l		# l : symbolic link
 <br> - : hyphen is ordinary file
 <br> d : directory file
@@ -485,7 +485,7 @@ chgrp tecnosoftgrp hello
 chown <new owner> filename
 <br> chown test2 f1
 #### ps			# To see the processes running currently under UNIX
-<br> getpid() is the UNIX function to get the process id
+getpid() is the UNIX function to get the process id
 <br> 	Try this piece of code to see the  process id given by UNIX.
 ```
 main() {
@@ -503,17 +503,17 @@ main(){
 }
 ```
 
-#### UNIX Background Process
+#### Background Process
 Time consuming tasks may be run  in background. Place ‘& ’ at the end of the  command, the process will go to  background. Displays the PID after submission. Success or failure of the  background process will not be  reported. Better to redirect the background  process output to some file.  Otherwise, it will disturb the foreground process messages on  the screen
 
-#### UNIX Command - nohup
+#### Command - nohup
 nohup sort file1 > file2&	# To continue the execution of  background process even after the  logout. If the output is not redirected, it  will be redirected to a file  'nohup.out'
 
 #### Killing a Process
 kill PID		# To Terminate a process
 <br> kill -9 PID		# ‘sure kill’ signal ‘9’
 
-## Shell (Bash/Unix) Scripting
+## Bash (Unix Shell) Scripting
 sh shell
 <br> Two basic words in shell are read &  (backslash '\' is used to escape characters)
 <br> echo Enter your name\?
@@ -627,7 +627,7 @@ fi
 ```
 
 ### Operators
-<br> && - And Operator
+&& - And Operator
 <br> || - Or Operator
 <br> $ - To access a value in the variable
 
@@ -647,7 +647,7 @@ fi
 <br> -d return True if the file exists and is a directory
 
 #### Logical conditions
-<br> -a  stands for AND condition
+-a  stands for AND condition
 <br> -o  stands for OR condition
 <br> -!  Is negation
 ```
@@ -667,7 +667,7 @@ ksh: unset: c is read only
 ```
 
 #### case
-<br> Can use shell’s pattern matching
+Can use shell’s pattern matching
 <br> e.g.:
 ```
 case $1 in
@@ -940,7 +940,7 @@ The process priority can be  changed by:
 <br> crontab command-file/command		# Crontab executes a command  everyday at the given time forever
 
 ## Actual Interview Questions Faced in the Panel
-<br> How to search a string in a file?
+How to search a string in a file?
 <br> if grep $str $fname
 <br> How to copy a file?
 <br> How to check how many users working on the system?
