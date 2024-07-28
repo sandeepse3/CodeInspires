@@ -7,7 +7,7 @@
 # Matches are the substitution rules, when you type the "trigger" string
 # it gets replaced by the "replace" string.
 
-filter_title: "Visual Studio Code"
+filter_class: 'Code'
 
 matches:
   # Visual Studio Code
@@ -41,7 +41,7 @@ matches:
   - trigger: "ti;"
     replace: "# TITLE: "
 
-  - trigger: "re;"
+  - trigger: "ref;"
     replace: "# REFERENCES: "
 
   - trigger: "bu;"

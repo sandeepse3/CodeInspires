@@ -7,7 +7,7 @@
 # Matches are the substitution rules, when you type the "trigger" string
 # it gets replaced by the "replace" string.
 
-filter_title: "(Google Chrome|Firefox Web Browser)"
+filter_class: '(Google-chrome|Microsoft-edge)'
 
 matches:
   # Websitess
@@ -21,7 +21,7 @@ matches:
   - trigger: "am;"
     replace: "https://www.amazon.in/\n"
 
-  - trigger: "ac;"
+  - trigger: "acti;"
     replace: "https://myactivity.google.com/myactivity/\n"
 
   - trigger: "ar;"
@@ -36,8 +36,8 @@ matches:
   - trigger: "ba;"
     replace: "https://bard.google.com/\n"
 
-  - trigger: "bi;"
-    replace: "https://www.bing.com/search?q=Bing+AI&showconv=1&FORM=hpcodx\n"
+  - trigger: "co;"
+    replace: "https://copilot.microsoft.com/\n"
 
   - trigger: "do;"
     replace: "https://docs.google.com/\n"
@@ -48,23 +48,23 @@ matches:
   - trigger: "dr;"
     replace: "https://drive.google.com/drive/my-drive\n"
 
-  - trigger: "ee;"
-    replace: "https://www.eenadu.net/\n"
-
   - trigger: "fl;"
     replace: "https://www.flipkart.com/\n"
 
   - trigger: "gm;"
     replace: "https://gmail.com/\n"
 
-  - trigger: "gh;"
-    replace: "https://github.com/\n"
+  - trigger: "gi;"
+    replace: "https://github.com/sandeepse3/CodeInspires/\n"
 
   - trigger: "ke;"
     replace: "https://keep.google.com/\n"
+  
+  - trigger: "mi;"
+    replace: "https://miro.com/app/board/uXjVK1YOKmI=/\n"
 
   - trigger: "on;"
-    replace: "https://www.onenote.com/notebooks?wdorigin=+ondchrd&auth=1&nf=1&fromAR=1\n"
+    replace: "https://ltimindtree-my.sharepoint.com/personal/puttur_10743864_ltimindtree_com/_layouts/15/Doc.aspx?sourcedoc={d31de663-de19-4b98-bd8e-f119aa2a2585}&action=edit&wd=target%28Quick%20Notes.one%7Ced3cb1c9-ad2c-45ae-8a90-2aedc28e9649%2FTasks%7C4ed7f6b2-c73d-4205-b3dc-9220b29a78d4%2F%29&wdorigin=NavigationUrl\n"
     
   - trigger: "pyn;"
     replace: "https://pynative.com/python-exercises-with-solutions/\n"
@@ -76,8 +76,11 @@ matches:
     replace: "https://pastebin.com/hzkvcJ72\n"
 
   - trigger: "re;"
-    replace: "https://readalong.google.com/\n"
-
+    replace: |
+      Regards and Thanks
+      Sandeep P
+      ML Engineer$|$
+  
   - trigger: "sp;"
     replace: "https://www.speedtypingonline.com/typing-lessons\n"
 
