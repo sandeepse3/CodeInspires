@@ -1,6 +1,12 @@
 # CodeInspires
 Code Inspirations and References
 
+## Helpful
+echo $XDG_SESSION_TYPE
+<br> export PATH=/usr/local/cuda-12.1/bin${PATH:+:${PATH}}
+<br> sudo apt-get install python3-pip
+<br> sudo apt-get update
+
 ## Ubuntu
 sudo apt update
 <br> sudo apt install <package name>
@@ -33,12 +39,23 @@ pip install -r requirements.txt
 <br> pip install --upgrade pip   (to upgrade pip itself)
 <br> The -U option in pip install -U langchain stands for --upgrade. It means that pip will upgrade the package langchain-community to the latest version if it’s already installed. If the package is not installed, pip will install the latest version.
 
+## Pyenv
+pyenv for listing all the subcommands
+<br> pyenv version
+<br> pyenv versions
+<br> pyenv update (to update pyenv)
+<br> pyenv install --list
+<br> pyenv install 3.11 (installs latest version)
+<br> pyenv shell command only activates a particular python version for the shell that you ran that command line. And so when I opened up a new shell or a new terminal session, we can see that the PI shell command was no longer in effect. If we want to change to a version of Python system wide, we can use pyenv global and then a python version.
+<br> pyenv global 3.11.9
+<br> pyenv uninstall 3.11.7
+
 ## Poetry
 poetry init -To initialize pyproject.toml file
 <br> poetry -V -Finding poetry version
 <br> poetry show -To see all the packages
 <br> poetry show <package name> -To see all the dependencies of the package
-<br> poetry  shell -Activate the Python environment in the Folder that you are in
+<br> poetry shell - Create .venv within Environement and Activate it / Activate the Python environment in the Folder that you are in
 <br> poetry add <package name> -Create virtual environment (.venv) and install the package
 <br> poetry add <package name>@version -To install exact version
 <br> poetry add <package name>^2.12.1 -To install 2.Latest version.Latest version
@@ -65,10 +82,6 @@ pyenv shell command only activates a particular python version for the shell tha
 <br> pyenv global 3.11.9
 <br> pyenv uninstall 3.11.7
 
-## Helpful
-export PATH=/usr/local/cuda-12.1/bin${PATH:+:${PATH}}
-<br> sudo apt-get install python3-pip
-<br> sudo apt-get update
 #### Symbolic Link (symlink) Linux / Mac
 ln -s /path/to/original /path/to/symlink
 
