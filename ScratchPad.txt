@@ -1,3 +1,16 @@
+-----------------------------FOCUS 2024 & 2025------------------------------
+1. Python
+2. LangChain, LangGraph, LangSmith & LangServe
+3. Pydantic v1 (Basics) & v2 (Advanced)
+4. Prompt Engineering, HugginFace, LangChain Hub
+5. Fine Tuning LLMs
+6. Fastiapi & Postman
+7. PyTorch
+8. Linux Basics, Git & GitHub
+9. Docker & Microservices
+10.Jira, Confluence and Jenkins
+----------------------------------------------------------------------------
+
 1. The Project that I will be working on and is it standalone project/task or is it like I will be working with team with 2 to 3 like that
 2. the team members that I will be working with
 3. Focus areas
@@ -73,3 +86,7 @@ Incase if you are not finding / want to detect all the ollama models in oneshot
       "model": "AUTODETECT"
     },
 Write a python program to find prime number
+
+
+-----------------------------Copy------------------------------
+cp /etc/keyd/default.conf ~/CodeInspires/keyd/
