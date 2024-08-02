@@ -1,0 +1,90 @@
+# espanso configuration file
+
+# This is the default configuration file, change it as you like it
+# You can refer to the official documentation:
+# https://espanso.org/docs/
+
+# Matches are the substitution rules, when you type the "trigger" string
+# it gets replaced by the "replace" string.
+filter_title: "Terminal"
+
+matches:
+  # Terminal
+  - trigger: "cl;"
+    replace: "clear\n"
+  
+  - trigger: "ex;"
+    replace: "exit\n"
+
+  - trigger: "ls;"
+    replace: "ls -la\n"
+  
+  - trigger: "ac;"
+    replace: "cd $|$ && source ./bin/activate"
+
+  - trigger: "act;"
+    replace: "source ./bin/activate\n"
+
+  - trigger: "de;"
+    replace: "deactivate && cd ..\n"
+
+  - trigger: "dea;"
+    replace: "deactivate\n"
+
+  # Poetry
+  - trigger: "po;"
+    replace: "poetry "
+
+  - trigger: "poa;"
+    replace: "poetry add "
+
+  - trigger: "pos;"
+    replace: "poetry show\n"
+
+  - trigger: "poc;"
+    replace: "poetry config --list\n"
+
+  - trigger: "poi;"
+    replace: "poetry install --no-root"
+
+  # MongoShell
+  - trigger: "mat;"
+    replace: "mongosh 'mongodb+srv://cluster0.0iqyjne.mongodb.net/' --apiVersion 1 --username sandeep\n"
+
+  - trigger: "mos;"
+    replace: "mongosh\n"
+
+  # Git
+  - trigger: "git;"
+    replace: "git status\n"
+
+  - trigger: "gia;"
+    replace: "git add ."
+
+  - trigger: "gib;"
+    replace: "git branch\n"
+
+  - trigger: "gis;"
+    replace: "git switch "
+
+  - trigger: "gic;"
+    replace: "git commit -m '$|$'"
+
+    # Ollama
+  - trigger: "ol;"
+    replace: "ollama "
+
+  - trigger: "oll;"
+    replace: "ollama list\n"
+
+  - trigger: "ols;"
+    replace: "ollama show\n"
+
+  - trigger: "olp;"
+    replace: "ollama ps\n"
+
+  - trigger: "olpu;"
+    replace: "ollama pull "
+
+  - trigger: "olr;"
+    replace: "ollama run "

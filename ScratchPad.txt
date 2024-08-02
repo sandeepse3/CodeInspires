@@ -1,0 +1,92 @@
+-----------------------------FOCUS 2024 & 2025------------------------------
+1. Python
+2. LangChain, LangGraph, LangSmith & LangServe
+3. Pydantic v1 (Basics) & v2 (Advanced)
+4. Prompt Engineering, HugginFace, LangChain Hub
+5. Fine Tuning LLMs
+6. Fastiapi & Postman
+7. PyTorch
+8. Linux Basics, Git & GitHub
+9. Docker & Microservices
+10.Jira, Confluence and Jenkins
+----------------------------------------------------------------------------
+
+1. The Project that I will be working on and is it standalone project/task or is it like I will be working with team with 2 to 3 like that
+2. the team members that I will be working with
+3. Focus areas
+4. Need help in git setup (PAT token), need document or something
+5. 
+
+Fosfor copilot - Tushar
+R&D and POC project
+
+1. Prompting
+2. POC - LLM Ask (Test Case)
+3. 
+
+
+Sandeep
+api, read_api, read_user, read_repository, write_repository
+
+
+Update
+
+dpkg --get-selections | grep -i microsoft-edge
+sudo apt install --only-upgrade microsoft-edge-stable
+
+
+Update ollama by running the install script again:
+
+curl -fsSL https://ollama.com/install.sh | sh
+
+Or 
+by downloading the ollama binary:
+
+sudo curl -L https://ollama.com/download/ollama-linux-amd64 -o /usr/bin/ollama
+sudo chmod +x /usr/bin/ollama
+
+
+we are using poly repo. Each of our repos have different set of APIs supporting different modules of the product
+
+-----------------------------INSERT INTO YOUR BRAIN------------------------------
+Here is a small description about few of our MS's:
+
+ask-leni : contains APIs for supporting MQL generation (query to MQL transformation), Question Completion, Flow etc which are major features/components related to ASK
+
+auto-query-completion: APIs for supporting spellcheck and OOC feature, Guided Ask etc
+
+ontology ms :  All the APIs related to ontology ( As of now semantic model has an ontology in the backend. In future, this will be removed and it will be part of the semantic model pipeline itself)
+
+config ms: All the APIs for supporting solution configurations like default measure/date etc
+
+utility & question generation: APIs for supporting multi-tile/multi-semantic model
+
+narratives-for-leni: API for Narrative generation for different variants of questions
+
+config-development: APIs for handling Jinja templates for narratives
+
+lxai: APIs supporting explainable AI feature
+
+
+-----------------------------UPDATING Ollama------------------------------
+cd /usr/bin
+sudo rm -rf ollama
+sudo curl -L https://ollama.com/download/ollama-linux-amd64 -o /usr/bin/ollama
+sudo chmod +x /usr/bin/ollama
+
+sudo systemctl daemon-reload
+sudo systemctl enable ollama
+
+sudo systemctl start ollama
+
+Incase if you are not finding / want to detect all the ollama models in oneshot
+    {
+      "title": "ollama",
+      "provider": "ollama",
+      "model": "AUTODETECT"
+    },
+Write a python program to find prime number
+
+
+-----------------------------Copy------------------------------
+cp /etc/keyd/default.conf ~/CodeInspires/keyd/
